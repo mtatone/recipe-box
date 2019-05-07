@@ -8,14 +8,17 @@
 %body
   #wrapper
     #wrapper-2
-      #sidebar.split-left.column
-        #navigation
-          %p Nav Buttons
-        #login-logout
-          %p.bttn.bttn-default= link_to 'Login', root_path
-          %p.bttn.bttn-default= link_to 'Logout', root_path
-      #wrapper-3.split-right
-        #header
+      #wrapper-3
+        #header.flex-row
+          #title
+            %p Recipe Box
+          #buttons.flex-row
+            #navigation
+              %p.btn.btn-default.navbar-item.button1= link_to 'New Recipe', root_path
+            #login-logout
+              %p.bttn.btn-default.navbar-item.button1= link_to 'Login', root_path
+              %p.btn.btn-default.navbar-item.button1= link_to 'Logout', root_path
         #main-content
           %h1 Main Contenti
         #footer
+          %p footer
