@@ -1,9 +1,10 @@
 class RecipesController < ApplicationController
+  before_action :find_recipe, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
   def show
-    find_recipe
   end
 
   def new
@@ -11,6 +12,18 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.new(recipe_params)
+
+    # if @recipe.save
+    #   redirect_to @recipe, notice: 'Recipe was successfully created!'
+    # else
+    #   render 'new'
+    # end
+  end
+
+  def destroy
+    @recipe.destroy
+    redirect_to root_path, notice: 'recipe successfully deleted!'
   end
 
 
@@ -18,5 +31,9 @@ class RecipesController < ApplicationController
 
   def find_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(:title, :description)
   end
 end
