@@ -1,0 +1,14 @@
+!!! 5
+
+= if @recipe.errors.any?
+  %p.errors
+    %h3 =@recipe.errors.count Prevented this recipe from saving
+    %ul 
+      = @recipe.errors.each do |error|
+        %li error
+
+= simple_form_for @recipe do |f|
+  %p.body
+    = f.input :title
+    = f.input :description
+  = f.button :submit
