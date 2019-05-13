@@ -32,7 +32,9 @@ gem 'simple_form', '~> 4.1'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'temple', '~> 0.8.1'
 gem 'tilt', '~> 2.0', '>= 2.0.9'
-
+gem 'pry', '~> 0.10.4'
+gem 'rb-readline', '~> 0.5.5'
+gem 'minitest', '~> 5.11', '>= 5.11.3'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -7,8 +7,10 @@
       = @recipe.errors.each do |error|
         %li error
 
-= simple_form_for @recipe do |f|
+=simple_form_for @recipe do |f|
   %p.body
     = f.input :title
+    %br
     = f.input :description
+  %br
   = f.button :submit

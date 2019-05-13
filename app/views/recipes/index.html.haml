@@ -1,3 +1,6 @@
 !!! 5
 
-%h1 Hello This is index
+-@recipes.each do |recipe|
+  #recipe
+    %h2=link_to recipe.title, recipe
+    %p= recipe.description
