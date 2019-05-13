@@ -1,0 +1,8 @@
+!!! 5
+
+#post
+  %h1=@recipe.title
+  %p=@recipe.description
+  %br
+  %p.btn.btn-default=link_to 'Edit', edit_recipe_path(@recipe)
+  %p.btn.btn-default=link_to 'Delete', root_path, method: :delete, data: {confirm: 'Are you sure?'}
