@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
+    console
     @recipes = Recipe.all.order('created_at DESC')
   end
 
@@ -14,7 +15,6 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-
     if @recipe.save
       redirect_to @recipe, notice: 'Recipe was successfully created!'
     else
@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
   end
 
   def update
+    @recipe.image.attach(recipe_params[:image])
     if @recipe.update(recipe_params)
       redirect_to @recipe, notice: 'Recipe was successfully updated!'
     else
@@ -49,6 +50,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description)
+    params.require(:recipe).permit(:title, :description, :image)
   end
 end

@@ -1,6 +1,10 @@
 !!! 5
 
--@recipes.each do |recipe|
-  #recipe
-    %h2=link_to recipe.title, recipe
-    %p= recipe.description
+.row
+  -@recipes.each_slice(4) do |recipes|
+    -recipes.each do |recipe|
+      .col-md-3
+        #recipe
+          .image-small{style: "background-image: url('#{rails_blob_url(recipe.image)}');"}
+          %h2=link_to recipe.title, recipe
+          %p= recipe.description
