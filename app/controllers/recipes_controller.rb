@@ -26,11 +26,14 @@ class RecipesController < ApplicationController
   end
 
   def update
-    if @recipe.update(recipe_params.permit(:title, :description))
+    if @recipe.update(recipe_params)
       redirect_to @recipe, notice: 'Recipe was successfully updated!'
     else
-      render 'edit'
+      render 'edit', notice: @recipe.errors.message.to_s
     end
+  end
+
+  def delete
   end
 
   def destroy
@@ -39,7 +42,7 @@ class RecipesController < ApplicationController
   end
 
 
-  private 
+  private
 
   def find_recipe
     @recipe = Recipe.find(params[:id])
