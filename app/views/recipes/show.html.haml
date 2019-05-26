@@ -3,6 +3,12 @@
 #post
   %h1=@recipe.title
   %p=@recipe.description
+  %ul
+  - @recipe.image.each do |file|
+    %li
+      = image_tag file
+  -# %p=@recipe.image
+  -# = image_tag(url_for(@recipe.image))
   %br
   =button_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-default button3"
   =button_to 'Delete', recipe_path(@recipe), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default button2"

@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-
+    binding.pry
     if @recipe.save
       redirect_to @recipe, notice: 'Recipe was successfully created!'
     else
@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
   end
 
   def update
+    @recipe.attach(params[:images])
     if @recipe.update(recipe_params)
       redirect_to @recipe, notice: 'Recipe was successfully updated!'
     else
@@ -49,6 +50,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description)
+    params.require(:recipe).permit(:title, :description, :image)
   end
 end
