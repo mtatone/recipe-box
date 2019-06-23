@@ -1,3 +1,3 @@
 class Recipe < ApplicationRecord
-  has_many_attached :image
+  has_one_attached :image
 end

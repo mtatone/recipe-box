@@ -4,3 +4,4 @@
   #recipe
     %h2=link_to recipe.title, recipe
     %p= recipe.description
+    %li= image_tag recipe.image if recipe.image.attached?
