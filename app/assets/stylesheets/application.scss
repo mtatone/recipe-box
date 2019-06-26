@@ -51,12 +51,13 @@
   background: #faf5eb;
   height: 90%;
   padding: 10px 10px 10px 10px;
+  overflow-y: scroll;
 }
 
 #footer{
- height: 5%;
- background: #ebf0fa;
- bottom: 0;
+  height: 5%;
+  background: #ebf0fa;
+  bottom: 0;
 }
 
 .split-left{
@@ -90,7 +91,13 @@
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.image {
-  height: 100px;
-  width: 100px;
+.image-small {
+  height: 200px;
+  width: 200px;
+  background-size: 100% 100%;
+}
+.image-medium {
+  height: 400px;
+  width: 400px;
+  background-size: 100% 100%;
 }
