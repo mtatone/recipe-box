@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_014952) do
   create_table "directions", force: :cascade do |t|
     t.integer "step"
     t.string "instruction"
+    t.integer "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_014952) do
     t.string "name"
     t.integer "amount"
     t.string "unit"
+    t.integer "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
