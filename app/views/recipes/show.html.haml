@@ -3,7 +3,8 @@
 #post
   %h1=@recipe.title
   %p=@recipe.description
-  .image-small{style: "background-image: url('#{rails_blob_url(@recipe.image)}');"}
+  -if @recipe.image.attached?
+    .image-small{style: "background-image: url('#{rails_blob_url(@recipe.image)}');"}
   %br
   =link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-default button3"
   =button_to 'Delete', recipe_path(@recipe), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default button2"

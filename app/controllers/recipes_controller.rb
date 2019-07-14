@@ -15,9 +15,15 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    if @recipe.save
-      redirect_to @recipe, notice: 'Recipe was successfully created!'
+    unless  recipe_params[:image].nil?
+      binding.pry
+      if @recipe.save
+        redirect_to @recipe, notice: 'Recipe was successfully created!'
+      else
+        render 'new'
+      end
     else
+      flash.now[:alert] = 'Please ensure a valid image is attached'
       render 'new'
     end
   end

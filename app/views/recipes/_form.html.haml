@@ -1,11 +1,11 @@
 !!! 5
 
-= if @recipe.errors.any?
+-if @recipe.errors.any?
   %p.errors
-    %h3 =@recipe.errors.count Prevented this recipe from saving
-    %ul 
-      = @recipe.errors.each do |error|
-        %li error
+    %h3 #{@recipe.errors.count} Error(s) prevented this recipe from saving
+    %ul
+      - @recipe.errors.full_messages.each do |error|
+        %li #{error}
 
 =simple_form_for @recipe do |f|
   %p.body
@@ -13,7 +13,7 @@
     %br
     = f.input :description
     = f.input :image, as: :file
-    - if @recipe.image.attached?
+    -if @recipe.image.attached?
       .image-small{style: "background-image: url('#{rails_blob_url(@recipe.image)}');"}
   %br
   %br
