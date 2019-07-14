@@ -15,6 +15,12 @@
     = f.input :image, as: :file
     -if @recipe.image.attached?
       .image-small{style: "background-image: url('#{rails_blob_url(@recipe.image)}');"}
+    %br
+    #ingredients
+      =f.simple_fields_for :ingredients do |i|
+        =render 'ingredient_fields', f: i
+      .links
+        =link_to_add_association 'add ingredient', f, :ingredients
   %br
   %br
   = f.button :submit

@@ -1,0 +1,18 @@
+!!! 5
+
+.form-inline.clearfix
+  .nested-fields
+    .field
+      =f.label 'Ingredient'
+      =f.text_field :name
+    .field
+      =f.label :amount
+      =f.text_field :amount
+    .field
+      =f.label :unit
+      =f.input :unit, collection: ['ml', 'L', 'C', 'TSP', 'TBS']
+    .field
+      =f.check_box :done
+      =f.label :done, as: :boolean
+      %br
+    =link_to_remove_association "remove ingredient", f
