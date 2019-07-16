@@ -6,6 +6,7 @@ ruby '2.3.3'
 
 
 
+gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -33,7 +34,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3'
 gem 'bootstrap-sass', '~> 3.4'
 gem 'sassc-rails', '>= 2.1.0'
-gem 'bootstrap', '~> 4.3.1'
 gem 'simple_form', '~> 4.1'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'temple', '~> 0.8.1'
