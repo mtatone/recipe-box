@@ -16,11 +16,19 @@
     -if @recipe.image.attached?
       .image-small{style: "background-image: url('#{rails_blob_url(@recipe.image)}');"}
     %br
+    %h3 Ingredients
     #ingredients
       =f.simple_fields_for :ingredients do |i|
         =render 'ingredient_fields', f: i
       .links
-        =link_to_add_association 'add ingredient', f, :ingredients
+        = link_to_add_association button_tag('Add Ingredient', type: "button", class: "button2"), f, :ingredients
+  %br
+  %h3 Directions
+  #ingredients
+    =f.simple_fields_for :directions do |d|
+      =render 'direction_fields', f: d
+    .links
+      = link_to_add_association button_tag('Add Direction', type: "button", class: "button2"), f, :directions
   %br
   %br
   = f.button :submit

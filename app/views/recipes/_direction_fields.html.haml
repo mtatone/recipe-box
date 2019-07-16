@@ -1,0 +1,12 @@
+!!! 5
+
+.form-inline.clearfix
+  .nested-fields
+    .field
+      =f.label 'Direction'
+      =f.text_field :instruction
+    %br
+    %span.input-group-btn
+      = link_to_remove_association button_tag('Remove Step', type: "button", class: "button2", wrapper_class: 'nested-fields'), f
+
+
