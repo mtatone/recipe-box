@@ -17,10 +17,13 @@
             %p.alert= alert
           #buttons.flex-row
             #navigation
-              = button_to 'New Recipe', new_recipe_path,method: :get, class: "btn.btn-default.navbar-item.button1"
+              - if user_signed_in?
+                = button_to 'New Recipe', new_recipe_path,method: :get, class: "btn.btn-default.navbar-item.button1"
             #login-logout
-              = button_to 'Login', root_path, class: "btn.btn-default.navbar-item.button1"
-              = button_to 'Logout', root_path, class: "btn.btn-default.navbar-item.button1"
+              - unless user_signed_in?
+                = button_to 'Login', root_path, class: "btn.btn-default.navbar-item.button1"
+              - else
+                = button_to 'Logout', root_path, class: "btn.btn-default.navbar-item.button1"
         #main-content
           = yield
         #footer

@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     console
