@@ -57,5 +57,4 @@ ActiveRecord::Schema.define(version: 2019_07_16_010850) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id", unique: true
   end
-
 end
