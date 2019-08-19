@@ -12,6 +12,9 @@
         #header.flex-row
           #title
             %p= link_to 'Recipe Box', root_path
+          #alert-notice
+            %p.notice= notice
+            %p.alert= alert
           #buttons.flex-row
             #navigation
               = button_to 'New Recipe', new_recipe_path,method: :get, class: "btn.btn-default.navbar-item.button1"
